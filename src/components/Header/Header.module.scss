@@ -1,0 +1,41 @@
+.profile {
+  padding-top: 56px;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  .content {
+    padding-left: 12px;
+    .text {
+      color: #6c727f;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 14px;
+    }
+  }
+  .avatar {
+    max-width: 40px;
+    width: 100%;
+    object-fit: cover;
+    height: 40px;
+  }
+  .profile {
+    padding: 0;
+    margin-left: auto;
+    img {
+      max-width: 24px;
+      text-align: center;
+
+      width: 100%;
+      object-fit: cover;
+      height: 24px;
+    }
+  }
+}
+.title {
+  margin-top: 24px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+}

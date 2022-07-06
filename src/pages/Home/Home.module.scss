@@ -1,0 +1,13 @@
+.title {
+  font-size: 22px;
+  margin-top: 24px;
+  font-weight: 800;
+  color: #fff;
+}
+.wrapper {
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 15px;
+}
