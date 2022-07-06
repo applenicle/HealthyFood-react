@@ -8,6 +8,27 @@
 body {
   background: #fff;
 }
+button {
+  cursor: pointer;
+  width: 100%;
+  background: none;
+  border-radius: 24px;
+  height: 68px;
+  border: none;
+}
+input {
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  // max-width: 327px;
+  width: 100%;
+  height: 68px;
+  padding-left: 60px;
+  border: none;
+  border: 1px solid #6c727f;
+  color: #6c727f;
+}
 .container {
   background: #121826;
   margin: 0 auto;
@@ -16,6 +37,6 @@ body {
   // height: 812px;
   padding: 0 15px;
   color: #000;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Manrope', sans-serif;
 }

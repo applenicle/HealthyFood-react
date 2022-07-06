@@ -12,7 +12,7 @@ const Header: React.FC = () => {
           <img className={styles.avatar} src={avatar} alt="avatar" />
           <div className={styles.content}>
             <p className={styles.text}>Good Morning</p>
-            <h6 className={styles.subtitle}>Hi, Apple</h6>
+            <h6 className={styles.subtitle}>Hi, Kítbase</h6>
           </div>
           <Link className={styles.profile} to="/">
             <img src={profile} alt="profile" />

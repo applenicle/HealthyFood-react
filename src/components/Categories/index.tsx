@@ -1,23 +1,25 @@
 import React from 'react';
 import styles from './Categories.module.scss';
 
+const categoriesItems: string[] = [
+  '🥘 All Food',
+  '🍰 Bakery',
+  '🍤 Seafood',
+  '🍖 Chicken',
+  '🍕 Pizza',
+  '🍔 Burger',
+];
+
 const Categories: React.FC = () => {
-  const categoriesItems: string[] = [
-    '🥘 All Food',
-    '🍰 Bakery',
-    '🍤 Seafood',
-    '🍖 Chicken',
-    '🍕 Pizza',
-    '🍔 Burger',
-  ];
-  // const [categories, setCategories] = React.useState({ categoriesItems });
+  const [categories, setCategories] = React.useState(0);
   return (
     <>
       <ul className={styles.list}>
-        <li className={styles.active}>🥘 All Food</li>
-
-        {categoriesItems.map((items, i) => (
-          <li className={styles.item} key={i}>
+        {categoriesItems.map((items: string, i: number) => (
+          <li
+            onClick={() => setCategories(i)}
+            className={categories === i ? styles.active : styles.item}
+            key={i}>
             {items}
           </li>
         ))}

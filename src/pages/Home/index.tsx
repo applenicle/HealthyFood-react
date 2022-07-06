@@ -9,7 +9,13 @@ const Home: React.FC = () => {
       <Header />
       <Search />
       <Categories />
-      <h3 className={styles.title}>Most Popular</h3>
+      <div className={styles.block}>
+        <h3 className={styles.title}>Most Popular</h3>
+        <Link className={styles.all} to="/products">
+          View all
+        </Link>
+      </div>
+
       <div className={styles.wrapper}>
         <Card />
         <Card />
