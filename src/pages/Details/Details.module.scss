@@ -1,0 +1,119 @@
+.details {
+  padding-bottom: 40px;
+
+  color: #fff;
+  .icon {
+    padding-top: 55px;
+    display: flex;
+    .back {
+      margin-right: auto;
+    }
+    .like {
+      display: none;
+    }
+  }
+
+  .content {
+    h2 {
+      font-size: 24px;
+      font-weight: 800;
+      text-align: center;
+    }
+    .price {
+      margin-top: 16px;
+      margin-bottom: 24px;
+      font-weight: 800;
+      text-align: center;
+      font-size: 24px;
+      span {
+        font-size: 16px;
+      }
+    }
+    .quanity {
+      text-align: center;
+      div {
+        margin: 0 auto;
+        position: relative;
+        img {
+          width: 100%;
+          max-width: 247px;
+          height: 247px;
+        }
+        div {
+          bottom: -15px;
+          left: 0;
+          right: 0;
+          position: absolute;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          font-size: 24px;
+          border-radius: 24px;
+          font-weight: 800;
+          height: 50px;
+          background: #ff7a28;
+          width: 160px;
+          cursor: pointer;
+          span {
+            padding: 0 40px;
+          }
+        }
+      }
+    }
+    .info {
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      margin: 40px auto;
+      align-items: center;
+      justify-content: space-between;
+      div {
+        padding-left: 8px;
+        text-align: center;
+        display: flex;
+        div {
+          margin-top: 2px;
+          text-align: center;
+        }
+        img {
+          max-width: 24px;
+          height: 24px;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .text {
+    color: #6c727f;
+  }
+  .title {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 800;
+    text-align: left;
+  }
+  .btn {
+    margin: 0 auto;
+    background: #ff7a28;
+    cursor: pointer;
+    width: 327px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 24px;
+    img {
+      width: 100%;
+      max-width: 24px;
+      height: 24px;
+    }
+    div {
+      padding-left: 6px;
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+  }
+}

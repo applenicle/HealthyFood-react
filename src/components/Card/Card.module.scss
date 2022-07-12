@@ -16,6 +16,10 @@
       position: absolute;
     }
     .dish {
+      width: 100%;
+      border-radius: 5px;
+      max-width: 124px;
+      height: 124px;
       cursor: pointer;
       margin-top: 15px;
       object-fit: cover;

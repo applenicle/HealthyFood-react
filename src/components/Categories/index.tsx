@@ -9,18 +9,21 @@ const categoriesItems: string[] = [
   '🍕 Pizza',
   '🍔 Burger',
 ];
+type CategoriesProps = {
+  categories: number;
+  onClickCategory: (i: number) => void;
+};
 
-const Categories: React.FC = () => {
-  const [categories, setCategories] = React.useState(0);
+const Categories: React.FC<CategoriesProps> = ({ categories, onClickCategory }) => {
   return (
     <>
       <ul className={styles.list}>
-        {categoriesItems.map((items: string, i: number) => (
+        {categoriesItems.map((obj, index) => (
           <li
-            onClick={() => setCategories(i)}
-            className={categories === i ? styles.active : styles.item}
-            key={i}>
-            {items}
+            key={index}
+            onClick={() => onClickCategory(index)}
+            className={categories === index ? styles.active : styles.item}>
+            {obj}
           </li>
         ))}
       </ul>
