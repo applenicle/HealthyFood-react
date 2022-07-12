@@ -68,7 +68,7 @@ const Details: React.FC = () => {
         </div>
         <div className={styles.btn}>
           <img src={cart} alt="cart" />
-          <div>Add to Cart</div>
+          <div>Add to Cart</div>d
         </div>
       </div>
     </div>
