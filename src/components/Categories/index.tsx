@@ -27,6 +27,10 @@ const Categories: React.FC<CategoriesProps> = ({ categories, onClickCategory }) 
           </li>
         ))}
       </ul>
+
+      <div className={styles.block}>
+        <h3 className={styles.title}>{categoriesItems[4]}</h3>
+      </div>
     </>
   );
 };

@@ -5,16 +5,19 @@ import avatar from '../../images/Avatar.png';
 import profile from '../../images/profile.svg';
 
 const Header: React.FC = () => {
+  const nickname = 'test';
   return (
     <>
       <div>
         <div className={styles.profile}>
-          <img className={styles.avatar} src={avatar} alt="avatar" />
+          <Link to="/profile">
+            <img className={styles.avatar} src={avatar} alt="avatar" />
+          </Link>
           <div className={styles.content}>
             <p className={styles.text}>Good Morning</p>
-            <h6 className={styles.subtitle}>Hi, Kítbase</h6>
+            <h6 className={styles.subtitle}>Hi, {nickname}</h6>
           </div>
-          <Link className={styles.profile} to="/">
+          <Link className={styles.profileLink} to="/">
             <img src={profile} alt="profile" />
           </Link>
         </div>

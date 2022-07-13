@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import styles from './Details.module.scss';
 import star from '../../images/fav.svg';
 import clock from '../../images/clock.svg';
@@ -7,6 +9,7 @@ import fire from '../../images/fire.svg';
 import cart from '../../images/cartMini.svg';
 import back from '../../images/back.svg';
 import like from '../../images/HeartItem.svg';
+import { fetchDishes } from '../../redux/Dishes/asyncAction';
 
 const Details: React.FC = () => {
   const [dishes, setDishes] = React.useState<{
@@ -18,6 +21,22 @@ const Details: React.FC = () => {
     imageUrl: string;
     kcal: number;
   }>();
+  let { id } = useParams();
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    async function fetchDishes() {
+      try {
+        const { data } = await axios.get(`https://62c96901d9ead251e8bb4e90.mockapi.io/f/` + id);
+        return setDishes(data);
+      } catch (error) {
+        navigate(`/`);
+      }
+    }
+    fetchDishes();
+  }, []);
+  // const s = dishes.price;
+  // const priceNumber = ([price] + '').split('.');
+  // console.log(priceNumber);
   if (!dishes) return <>Loading</>;
   return (
     <div className={styles.details}>
@@ -34,7 +53,8 @@ const Details: React.FC = () => {
       <div className={styles.content}>
         <h2>{dishes.title}</h2>
         <div className={styles.price}>
-          $10<span>.49</span>
+          ${dishes.price}
+          <span>.49</span>
         </div>
         <div className={styles.quanity}>
           <div>
@@ -52,7 +72,7 @@ const Details: React.FC = () => {
           </div>
           <div>
             <img src={star} alt="star" />
-            <div>{dishes.rating}(1.2k)</div>
+            <div>{dishes.rating}</div>
           </div>
           <div>
             <img src={fire} alt="fire" />
@@ -61,14 +81,11 @@ const Details: React.FC = () => {
         </div>
         <div>
           <h5 className={styles.title}>About</h5>
-          <p className={styles.text}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio doloremque porro
-            similique quos voluptatem natus.
-          </p>
+          <p className={styles.text}>{dishes.about}</p>
         </div>
         <div className={styles.btn}>
           <img src={cart} alt="cart" />
-          <div>Add to Cart</div>d
+          <div>Add to Cart</div>
         </div>
       </div>
     </div>

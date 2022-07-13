@@ -3,7 +3,7 @@ import styles from './Search.module.scss';
 import cog from '../../images/Cog.svg';
 import search from '../../images/search.svg';
 import { useDispatch } from 'react-redux';
-import { setValue } from '../../redux/slices/Filter/FilterSlice';
+import { setValue } from '../../redux/Filter/slice';
 
 const Search: React.FC = () => {
   const ref = React.useRef<HTMLInputElement>(null);

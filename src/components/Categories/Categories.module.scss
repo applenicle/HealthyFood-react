@@ -25,3 +25,14 @@
     background: #ff7a28;
   }
 }
+.block {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  .title {
+    font-size: 22px;
+    margin-top: 24px;
+    font-weight: 800;
+    color: #fff;
+  }
+}

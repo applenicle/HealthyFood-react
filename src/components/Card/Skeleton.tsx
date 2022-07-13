@@ -5,7 +5,7 @@ import styles from './Card.module.scss';
 const Skeleton = () => (
   <ContentLoader
     className={styles.block}
-    speed={2}
+    speed={4}
     width={165}
     height={254}
     viewBox="0 0 165 254"

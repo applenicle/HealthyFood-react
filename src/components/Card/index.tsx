@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Card.module.scss';
 import star from '../../images/Star.svg';
 // import favourite from '../../images/fav.svg';
@@ -11,15 +12,18 @@ type CardProps = {
   time: number;
   price: number;
   rating: number;
+  id: string;
 };
 
-const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price }) => {
+const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id }) => {
   const priceNumber = ([price] + '').split('.');
   return (
     <div className={styles.block}>
       <div className={styles.images}>
         <img className={styles.fav} src={heart} alt="favourite" />
-        <img className={styles.dish} src={imageUrl} alt="Pictures" />
+        <Link to={`/details/${id}`}>
+          <img className={styles.dish} src={imageUrl} alt="Pictures" />
+        </Link>
       </div>
       <div className={styles.content}>
         <h2 className={styles.title}>{title}</h2>

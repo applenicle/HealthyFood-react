@@ -20,13 +20,14 @@
     object-fit: cover;
     height: 40px;
   }
-  .profile {
+  .profileLink {
     padding: 0;
+    cursor: pointer;
     margin-left: auto;
     img {
       max-width: 24px;
+      cursor: pointer;
       text-align: center;
-
       width: 100%;
       object-fit: cover;
       height: 24px;
