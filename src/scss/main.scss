@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  color: #fff;
   text-decoration: none;
 }
 body {
@@ -22,7 +23,6 @@ input {
   font-size: 14px;
   font-weight: 500;
   background: none;
-  // max-width: 327px;
   width: 100%;
   height: 68px;
   padding-left: 60px;
@@ -35,7 +35,6 @@ input {
   margin: 0 auto;
   font-weight: regular;
   max-width: 375px;
-  // height: 812px;
   padding: 0 15px;
   color: #000;
   font-size: 14px;

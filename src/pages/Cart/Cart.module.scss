@@ -1,0 +1,46 @@
+h2 {
+  font-size: 24px;
+  font-weight: 800;
+  padding-top: 55px;
+  margin-bottom: 40px;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 25px;
+}
+.totalPrice {
+  margin-top: 105px;
+  text-align: center;
+  align-items: center;
+  font-size: 14px;
+  .subtotal {
+    display: flex;
+    padding-bottom: 24px;
+    .text {
+      color: #6c727f;
+      margin-right: auto;
+    }
+    span {
+      font-weight: 800;
+    }
+  }
+  .total {
+    padding-top: 24px;
+    border-top: 1px dashed #6c727f;
+    display: flex;
+    .text {
+      color: #6c727f;
+      margin-right: auto;
+    }
+    span {
+      font-weight: 800;
+    }
+  }
+}
+.btn {
+  margin: 25px 0;
+  font-weight: 800;
+  background: #ff7a28;
+}

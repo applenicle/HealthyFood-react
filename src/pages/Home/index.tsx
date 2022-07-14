@@ -33,16 +33,13 @@ const Home: React.FC = () => {
 
   React.useEffect(() => {
     getItems();
-  }, [categoryID, value]);
+  }, [value, categoryID]);
   return (
     <div>
       <Header />
       <Search />
       <Categories categories={category} onClickCategory={ChangeCategory} />
-      {/* <div className={styles.block}>
-        <h3 className={styles.title}>{category}</h3>
-      </div> */}
-      <div>
+      <div className={styles.scroll}>
         {status === 'error' ? (
           <div>Ошибка</div>
         ) : (

@@ -13,6 +13,7 @@ type CategoriesProps = {
   categories: number;
   onClickCategory: (i: number) => void;
 };
+const test = 'Categories';
 
 const Categories: React.FC<CategoriesProps> = ({ categories, onClickCategory }) => {
   return (
@@ -29,7 +30,7 @@ const Categories: React.FC<CategoriesProps> = ({ categories, onClickCategory }) 
       </ul>
 
       <div className={styles.block}>
-        <h3 className={styles.title}>{categoriesItems[4]}</h3>
+        <h3 className={styles.title}>{test}</h3>
       </div>
     </>
   );

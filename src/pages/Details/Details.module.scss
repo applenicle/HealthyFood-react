@@ -1,7 +1,6 @@
 .details {
-  padding-bottom: 40px;
-
   color: #fff;
+  padding-bottom: 20px;
   .icon {
     padding-top: 55px;
     display: flex;
@@ -40,7 +39,7 @@
           height: 247px;
           object-fit: cover;
         }
-        div {
+        .counter {
           bottom: -15px;
           left: 0;
           right: 0;
@@ -54,9 +53,11 @@
           height: 50px;
           background: #ff7a28;
           width: 160px;
-          cursor: pointer;
-          span {
-            padding: 0 40px;
+          div {
+            cursor: pointer;
+            span {
+              padding: 0 40px;
+            }
           }
         }
       }
@@ -84,8 +85,19 @@
       }
     }
   }
+
   .text {
     color: #6c727f;
+    scroll-snap-type: y mandatory;
+    overflow-x: auto;
+    height: 80px;
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #fff;
+      border-radius: 5px;
+    }
   }
   .title {
     margin-top: 40px;
@@ -94,27 +106,28 @@
     font-weight: 800;
     text-align: left;
   }
-  .btn {
-    margin: 0 auto;
-    background: #ff7a28;
-    cursor: pointer;
-    width: 327px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    border-radius: 24px;
-    img {
-      width: 100%;
-      max-width: 24px;
-      height: 24px;
-    }
-    div {
-      padding-left: 6px;
-      font-size: 16px;
-      font-weight: 800;
-      color: #fff;
-    }
+}
+
+.btn {
+  margin: 0 auto;
+  background: #ff7a28;
+  cursor: pointer;
+  width: 327px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 24px;
+  img {
+    width: 100%;
+    max-width: 24px;
+    height: 24px;
+  }
+  div {
+    padding-left: 6px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
   }
 }

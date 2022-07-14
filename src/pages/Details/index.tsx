@@ -12,6 +12,8 @@ import like from '../../images/HeartItem.svg';
 import { fetchDishes } from '../../redux/Dishes/asyncAction';
 
 const Details: React.FC = () => {
+  const [count, setCount] = React.useState(0);
+
   const [dishes, setDishes] = React.useState<{
     title: string;
     price: number;
@@ -34,9 +36,7 @@ const Details: React.FC = () => {
     }
     fetchDishes();
   }, []);
-  // const s = dishes.price;
-  // const priceNumber = ([price] + '').split('.');
-  // console.log(priceNumber);
+
   if (!dishes) return <>Loading</>;
   return (
     <div className={styles.details}>
@@ -52,15 +52,14 @@ const Details: React.FC = () => {
       </div>
       <div className={styles.content}>
         <h2>{dishes.title}</h2>
-        <div className={styles.price}>
-          ${dishes.price}
-          <span>.49</span>
-        </div>
+        <div className={styles.price}>$ {dishes.price}</div>
         <div className={styles.quanity}>
           <div>
             <img src={dishes.imageUrl} alt="" />
-            <div>
-              -<span>2</span>+
+            <div className={styles.counter}>
+              <div onClick={() => setCount(count - 1)}>-</div>
+              <span>{count}</span>
+              <div onClick={() => setCount(count + 1)}>+</div>
             </div>
           </div>
         </div>
@@ -79,10 +78,10 @@ const Details: React.FC = () => {
             <div>{dishes.kcal}Kcal</div>
           </div>
         </div>
-        <div>
+        <>
           <h5 className={styles.title}>About</h5>
           <p className={styles.text}>{dishes.about}</p>
-        </div>
+        </>
         <div className={styles.btn}>
           <img src={cart} alt="cart" />
           <div>Add to Cart</div>

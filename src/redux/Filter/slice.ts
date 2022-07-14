@@ -1,11 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-// rating: number;
-// time: number;
-// title: string;
-// price: number;
-
 type State = {
   value: string;
   categoryID: number;
