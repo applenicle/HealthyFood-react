@@ -3,9 +3,11 @@ import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import avatar from '../../images/Avatar.png';
 import profile from '../../images/profile.svg';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
 
 const Header: React.FC = () => {
-  const nickname = 'test';
+  const test = 'test';
+  // const { email } = useSelector((state: any) => state.UserReducer);
   return (
     <>
       <div>
@@ -15,9 +17,9 @@ const Header: React.FC = () => {
           </Link>
           <div className={styles.content}>
             <p className={styles.text}>Good Morning</p>
-            <h6 className={styles.subtitle}>Hi, {nickname}</h6>
+            <h6 className={styles.subtitle}>Hi, {test}</h6>
           </div>
-          <Link className={styles.profileLink} to="/">
+          <Link className={styles.themeToogle} to="/">
             <img src={profile} alt="profile" />
           </Link>
         </div>

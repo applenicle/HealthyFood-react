@@ -5,6 +5,8 @@ import star from '../../images/Star.svg';
 // import favourite from '../../images/fav.svg';
 import heart from '../../images/Heart.svg';
 import miniCart from '../../images/mini-cart.svg';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
+import { setItems, addItem } from '../../redux/Cart/slice';
 
 type CardProps = {
   title: string;
@@ -17,6 +19,11 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id }) => {
   const priceNumber = ([price] + '').split('.');
+  const dispatch = useAppDispatch();
+  const { items } = useAppSelector((state) => state.CartReducer);
+  const addItemToCart = () => {
+    dispatch(addItem({ id }));
+  };
   return (
     <div className={styles.block}>
       <div className={styles.images}>
@@ -38,7 +45,7 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id })
             ${priceNumber[0]}
             <span>.{priceNumber[1]}</span>
           </p>
-          <img className={styles.cart} src={miniCart} alt="cart" />
+          <img onClick={addItemToCart} className={styles.cart} src={miniCart} alt="cart" />
         </div>
       </div>
     </div>

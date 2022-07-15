@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import Home from '../../images/homeIco.svg';
 import Favourite from '../../images/favIco.svg';
@@ -11,19 +12,29 @@ const Footer = () => {
     <div>
       <ul className={styles.list}>
         <li>
-          <img src={Home} alt="Home" />
+          <Link to="/">
+            <img src={Home} alt="Home" />
+          </Link>
         </li>
         <li>
-          <img src={Favourite} alt="Favourite" />
+          <Link to="/favourite">
+            <img src={Favourite} alt="Favourite" />
+          </Link>
         </li>
         <li className={styles.mainBtn}>
-          <img src={MainBtn} alt="MainBtn" />
+          <Link to="/">
+            <img src={MainBtn} alt="MainBtn" />
+          </Link>
         </li>
         <li>
-          <img src={Profile} alt="Profile" />
+          <Link to="/profile">
+            <img src={Profile} alt="Profile" />
+          </Link>
         </li>
         <li>
-          <img src={Cart} alt="Cart" />
+          <Link to="/cart">
+            <img src={Cart} alt="Cart" />
+          </Link>
         </li>
       </ul>
     </div>

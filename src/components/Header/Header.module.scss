@@ -20,7 +20,7 @@
     object-fit: cover;
     height: 40px;
   }
-  .profileLink {
+  .themeToogle {
     padding: 0;
     cursor: pointer;
     margin-left: auto;
@@ -35,7 +35,8 @@
   }
 }
 .title {
-  margin-top: 24px;
+  padding: 0;
+  margin: 24px 0;
   color: #fff;
   font-weight: 700;
   font-size: 24px;

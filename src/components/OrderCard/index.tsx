@@ -8,23 +8,30 @@ type OrderCardProps = {
 };
 
 const OrderCard: React.FC<OrderCardProps> = ({ title, price, imageUrl, count }) => {
+  const [counter, setCounter] = React.useState(0);
   return (
-    <div className={styles.block}>
-      <img
-        src="https://img.freepik.com/free-photo/top-view-delicious-seafood-composition_23-2148926779.jpg?t=st=1657436298~exp=1657436898~hmac=3d4393259988aaf63056f5d79b8b2aaa40111adda664202cdfbabb105e2ae6d8&w=1800"
-        alt="dishes"
-      />
-      <div className={styles.description}>
-        <h4 className={styles.title}>{title}</h4>
-        <span>Foodbase</span>
-        <div>
-          $10<span>.49</span>
+    <div className={styles.scroll}>
+      <div className={styles.block}>
+        <img src={imageUrl} alt="dishes" />
+        <div className={styles.description}>
+          <h4 className={styles.title}>{title}</h4>
+          <span>Foodbase</span>
+          <div>
+            ${price}
+            {/* $10<span>.49</span> */}
+          </div>
         </div>
-      </div>
-      <div className={styles.counter}>
-        <div className={styles.btn}>-</div>
-        <div className={styles.number}>1</div>
-        <div className={styles.btnActive}>+</div>
+        <div className={styles.counter}>
+          <div
+            onClick={() => setCounter(counter - 1)}
+            className={counter > 0 ? styles.btnActive : styles.btn}>
+            -
+          </div>
+          <div className={styles.number}>{counter}</div>
+          <div onClick={() => setCounter(counter + 1)} className={styles.btnActive}>
+            +
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -2,12 +2,12 @@ import React from 'react';
 import styles from './Search.module.scss';
 import cog from '../../images/Cog.svg';
 import search from '../../images/search.svg';
-import { useDispatch } from 'react-redux';
 import { setValue } from '../../redux/Filter/slice';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
 
 const Search: React.FC = () => {
   const ref = React.useRef<HTMLInputElement>(null);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [searchValue, setSearchValue] = React.useState('');
 
   const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {

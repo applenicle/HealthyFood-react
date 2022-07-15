@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
 import { Card, Categories, Search, Header } from '../../components';
 import Skeleton from '../../components/Card/Skeleton';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '../../redux/store';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
 import { setCategory } from '../../redux/Filter/slice';
 import { fetchDishes } from '../../redux/Dishes/asyncAction';
+import cart from '../../images/cartIconItem.svg';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -14,7 +16,7 @@ const Home: React.FC = () => {
   const dishes = items.map((obj: any) => <Card key={obj.id} {...obj} />);
   const lazySkeleton = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
   const category = categoryID;
-
+  const [modal, setModal] = React.useState(false);
   const ChangeCategory = React.useCallback((idx: number) => {
     dispatch(setCategory(idx));
   }, []);
@@ -46,6 +48,18 @@ const Home: React.FC = () => {
           <div className={styles.wrapper}>{status === 'loading' ? lazySkeleton : dishes}</div>
         )}
       </div>
+      {!modal && (
+        <div className={styles.modal}>
+          <img src={cart} alt="cart" />
+          <div className={styles.content}>
+            <div>2 items</div>
+            <div className={styles.price}>$22.97</div>
+          </div>
+          <Link to="/cart" className={styles.btn}>
+            Check out
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
