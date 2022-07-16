@@ -4,13 +4,13 @@ import { OrderCard } from '../../components';
 import { useAppSelector } from '../../hooks/redux-hooks';
 
 const Cart: React.FC = () => {
-  const { items, totalPrice } = useAppSelector((state) => state.CartReducer);
+  const { cartItems, totalPrice } = useAppSelector((state) => state.CartReducer);
   return (
     <div>
       <h2>You Order</h2>
       <div className={styles.scroll}>
         <div className={styles.wrapper}>
-          {items.map((obj: any) => (
+          {cartItems.map((obj: any) => (
             <OrderCard key={obj.id} {...obj} />
           ))}
         </div>
@@ -18,7 +18,7 @@ const Cart: React.FC = () => {
       <div className={styles.totalPrice}>
         <div className={styles.subtotal}>
           <div className={styles.text}>Sub total</div>
-          <span>$ {Math.floor(totalPrice)}</span>
+          <span>$ {Math.floor(totalPrice * 100) / 100}</span>
         </div>
         <div className={styles.total}>
           <div className={styles.text}>Total</div>

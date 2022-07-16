@@ -8,9 +8,6 @@ import fire from '../../images/fire.svg';
 import cart from '../../images/cartMini.svg';
 import back from '../../images/back.svg';
 import like from '../../images/HeartItem.svg';
-import { fetchDishes } from '../../redux/Dishes/asyncAction';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
-import { removeItem, addItem } from '../../redux/Cart/slice';
 
 const Details: React.FC = () => {
   const [dishes, setDishes] = React.useState<{

@@ -5,8 +5,8 @@ import star from '../../images/Star.svg';
 // import favourite from '../../images/fav.svg';
 import heart from '../../images/Heart.svg';
 import miniCart from '../../images/mini-cart.svg';
-import { useAppDispatch } from '../../hooks/redux-hooks';
-import { addItem } from '../../redux/Cart/slice';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
+import { addItem, setModal } from '../../redux/Cart/slice';
 
 type CardProps = {
   title: string;
@@ -18,9 +18,16 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id }) => {
-  const priceNumber = ([price] + '').split('.');
   const dispatch = useAppDispatch();
+  const { modal } = useAppSelector((state) => state.CartReducer);
+  const toggleModal = () => {
+    const timer = setInterval(() => dispatch(setModal(!modal)), 3000);
+    setTimeout(() => {
+      clearInterval(timer);
+    }, 4000);
+  };
   const onClickAddToCart = () => {
+    toggleModal();
     const item = {
       id,
       title,
@@ -30,6 +37,8 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id })
     };
     dispatch(addItem(item));
   };
+  const priceNumber = ([price] + '').split('.');
+
   return (
     <div className={styles.block}>
       <div className={styles.images}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
+import { useAppDispatch } from '../../hooks/redux-hooks';
 import { addItem, removeItem } from '../../redux/Cart/slice';
 import styles from './OrderCard.module.scss';
 type OrderCardProps = {

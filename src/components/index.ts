@@ -6,3 +6,4 @@ export { default as Footer } from './Footer';
 export { default as OrderCard } from './OrderCard';
 export { default as Login } from './Login';
 export { default as SignUp } from './SignUp';
+export { default as Modal } from './Modal';

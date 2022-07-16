@@ -3,7 +3,7 @@ import styles from './Search.module.scss';
 import cog from '../../images/Cog.svg';
 import search from '../../images/search.svg';
 import { setValue } from '../../redux/Filter/slice';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
+import { useAppDispatch } from '../../hooks/redux-hooks';
 
 const Search: React.FC = () => {
   const ref = React.useRef<HTMLInputElement>(null);
@@ -20,7 +20,6 @@ const Search: React.FC = () => {
     dispatch(setValue(''));
     ref.current?.focus();
   };
-  console.log(searchValue);
 
   return (
     <>
