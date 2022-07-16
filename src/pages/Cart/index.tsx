@@ -1,18 +1,10 @@
 import React from 'react';
 import styles from './Cart.module.scss';
-import { useSelector } from 'react-redux';
 import { OrderCard } from '../../components';
-import { fetchDishes } from '../../redux/Dishes/asyncAction';
-import { setItems } from '../../redux/Cart/slice';
+import { useAppSelector } from '../../hooks/redux-hooks';
 
 const Cart: React.FC = () => {
-  const { items } = useSelector((state: any) => state.CartReducer);
-  console.log(items);
-  // React.useEffect(() => {
-  //   // fetchDishes({});
-  //   // return () => {};
-  // }, []);
-
+  const { items, totalPrice } = useAppSelector((state) => state.CartReducer);
   return (
     <div>
       <h2>You Order</h2>
@@ -26,11 +18,11 @@ const Cart: React.FC = () => {
       <div className={styles.totalPrice}>
         <div className={styles.subtotal}>
           <div className={styles.text}>Sub total</div>
-          <span>$ 132</span>
+          <span>$ {Math.floor(totalPrice)}</span>
         </div>
         <div className={styles.total}>
-          <div className={styles.text}>Sub total</div>
-          <span>$ 132</span>
+          <div className={styles.text}>Total</div>
+          <span>$ {Math.floor(totalPrice + (totalPrice * 3) / 100)}</span>
         </div>
       </div>
       <button className={styles.btn}>Pay now</button>

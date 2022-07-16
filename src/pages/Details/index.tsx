@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import styles from './Details.module.scss';
 import star from '../../images/fav.svg';
 import clock from '../../images/clock.svg';
@@ -10,10 +9,10 @@ import cart from '../../images/cartMini.svg';
 import back from '../../images/back.svg';
 import like from '../../images/HeartItem.svg';
 import { fetchDishes } from '../../redux/Dishes/asyncAction';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
+import { removeItem, addItem } from '../../redux/Cart/slice';
 
 const Details: React.FC = () => {
-  const [count, setCount] = React.useState(0);
-
   const [dishes, setDishes] = React.useState<{
     title: string;
     price: number;
@@ -23,6 +22,7 @@ const Details: React.FC = () => {
     imageUrl: string;
     kcal: number;
   }>();
+
   let { id } = useParams();
   const navigate = useNavigate();
   React.useEffect(() => {
@@ -57,9 +57,9 @@ const Details: React.FC = () => {
           <div>
             <img src={dishes.imageUrl} alt="" />
             <div className={styles.counter}>
-              <div onClick={() => setCount(count - 1)}>-</div>
-              <span>{count}</span>
-              <div onClick={() => setCount(count + 1)}>+</div>
+              <div>-</div>
+              <span>0</span>
+              <div>+</div>
             </div>
           </div>
         </div>
