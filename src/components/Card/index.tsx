@@ -56,10 +56,10 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id })
           </span>
         </div>
         <div className={styles.price}>
-          <p className={styles.text}>
+          <div className={styles.text}>
             ${priceNumber[0]}
             <span>.{priceNumber[1]}</span>
-          </p>
+          </div>
           <img onClick={onClickAddToCart} className={styles.cart} src={miniCart} alt="cart" />
         </div>
       </div>

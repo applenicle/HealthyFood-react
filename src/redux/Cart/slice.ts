@@ -40,6 +40,7 @@ export const DishesSlice = createSlice({
       }
       state.totalPrice = state.cartItems.reduce((acc, item) => item.count * item.price + acc, 0);
       state.totalCount = state.cartItems.reduce((acc, item) => item.count + acc, 0);
+      console.log(state.totalPrice);
     },
     removeItem: (state, action) => {
       const ID = state.cartItems.findIndex((item) => item.id === action.payload.id);
@@ -55,6 +56,7 @@ export const DishesSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = [];
       state.totalPrice = 0;
+      state.modal = false;
     },
     setModal: (state, action) => {
       state.modal = action.payload;

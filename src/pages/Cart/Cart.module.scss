@@ -1,8 +1,17 @@
-h2 {
-  font-size: 24px;
-  font-weight: 800;
-  padding-top: 55px;
-  margin-bottom: 40px;
+.title {
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+    padding-top: 55px;
+    margin-bottom: 40px;
+  }
+  img {
+    margin-top: 15px;
+    margin-left: auto;
+    cursor: pointer;
+  }
 }
 .scroll {
   scroll-snap-type: y mandatory;
@@ -53,6 +62,7 @@ h2 {
   }
 }
 .btn {
+  color: #fff;
   margin: 25px 0;
   font-weight: 800;
   background: #ff7a28;

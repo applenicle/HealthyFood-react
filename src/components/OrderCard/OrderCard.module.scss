@@ -21,7 +21,6 @@
     }
     span {
       margin: 8px 0;
-      color: #6c727f;
       font-size: 12px;
     }
     div {
@@ -46,8 +45,10 @@
       border-radius: 10px;
       height: 24px;
       cursor: pointer;
+      color: #fff;
     }
     .btnActive {
+      color: #fff;
       padding-top: 2px;
       width: 24px;
       background: #ff7a28;

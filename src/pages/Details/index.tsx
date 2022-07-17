@@ -8,6 +8,7 @@ import fire from '../../images/fire.svg';
 import cart from '../../images/cartMini.svg';
 import back from '../../images/back.svg';
 import like from '../../images/HeartItem.svg';
+import { useAppSelector } from '../../hooks/redux-hooks';
 
 const Details: React.FC = () => {
   const [dishes, setDishes] = React.useState<{
@@ -19,6 +20,8 @@ const Details: React.FC = () => {
     imageUrl: string;
     kcal: number;
   }>();
+
+  const { totalCount } = useAppSelector((state) => state.CartReducer);
 
   let { id } = useParams();
   const navigate = useNavigate();
@@ -55,7 +58,7 @@ const Details: React.FC = () => {
             <img src={dishes.imageUrl} alt="" />
             <div className={styles.counter}>
               <div>-</div>
-              <span>0</span>
+              <span>{totalCount}</span>
               <div>+</div>
             </div>
           </div>
@@ -79,10 +82,10 @@ const Details: React.FC = () => {
           <h5 className={styles.title}>About</h5>
           <p className={styles.text}>{dishes.about}</p>
         </>
-        <div className={styles.btn}>
+        <Link to="/cart" className={styles.btn}>
           <img src={cart} alt="cart" />
           <div>Add to Cart</div>
-        </div>
+        </Link>
       </div>
     </div>
   );

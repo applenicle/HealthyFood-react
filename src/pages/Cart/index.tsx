@@ -1,13 +1,22 @@
 import React from 'react';
 import styles from './Cart.module.scss';
-import { OrderCard } from '../../components';
-import { useAppSelector } from '../../hooks/redux-hooks';
+import bin from '../../images/bin.svg';
+import { EmptyCart, OrderCard } from '../../components';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
+import { clearCart } from '../../redux/Cart/slice';
 
 const Cart: React.FC = () => {
   const { cartItems, totalPrice } = useAppSelector((state) => state.CartReducer);
+  const dispatch = useAppDispatch();
+  if (!totalPrice) {
+    return <EmptyCart />;
+  }
   return (
     <div>
-      <h2>You Order</h2>
+      <div className={styles.title}>
+        <h2>You Order</h2>
+        <img onClick={() => dispatch(clearCart())} src={bin} alt="clear" />
+      </div>
       <div className={styles.scroll}>
         <div className={styles.wrapper}>
           {cartItems.map((obj: any) => (

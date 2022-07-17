@@ -5,7 +5,6 @@
   border-radius: 24px;
   background: #212936;
   text-align: left;
-  color: #fff;
   .images {
     text-align: center;
     position: relative;
@@ -28,8 +27,6 @@
   .content {
     padding-left: 20px;
     .title {
-      margin: 0;
-      padding: 0;
       margin-top: 16px;
       font-size: 16px;
     }
@@ -55,8 +52,8 @@
         font-size: 18px;
         font-weight: bold;
         span {
-          color: #6c727f;
           font-size: 14px;
+          color: #6c727f;
           margin-right: auto;
         }
       }

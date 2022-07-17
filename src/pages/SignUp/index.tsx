@@ -10,6 +10,7 @@ const SignUpPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const handler = (email: string, password: string) => {
     const auth = getAuth();
+    console.log(auth);
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
         dispatch(setUser({ email: user.email, id: user.uid, token: user.refreshToken }));

@@ -3,13 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  color: #fff;
   text-decoration: none;
 }
 
 body {
-  background: #fff;
+  background: #c4c4c4;
 }
+
 button {
   cursor: pointer;
   width: 100%;
@@ -38,7 +38,40 @@ input {
   font-weight: regular;
   max-width: 375px;
   padding: 0 15px;
-  color: #000;
+  color: #fff;
   font-size: 14px;
   font-family: 'Manrope', sans-serif;
+  li {
+    background: #212936;
+  }
+  button {
+    color: #fff;
+  }
+}
+.container-light {
+  background: #fff;
+  color: #121826;
+  margin: 0 auto;
+  font-weight: regular;
+  max-width: 375px;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: 'Manrope', sans-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #121826;
+  }
+  div {
+    background: inherit;
+  }
+  button {
+    color: #121826;
+  }
+  p {
+    color: #6c727f;
+  }
 }
