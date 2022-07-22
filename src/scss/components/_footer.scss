@@ -1,0 +1,25 @@
+.footer {
+  &__nav {
+    height: 105px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      cursor: pointer;
+      max-width: 24px;
+      width: 100%;
+      object-fit: cover;
+      height: 24px;
+    }
+  }
+  &__btn {
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+      object-fit: cover;
+      max-width: 64px;
+      height: 64px;
+      filter: drop-shadow(0px 16px 32px rgba(255, 122, 40, 0.32));
+    }
+  }
+}

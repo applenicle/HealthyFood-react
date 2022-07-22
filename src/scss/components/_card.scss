@@ -1,0 +1,76 @@
+.card {
+  &__block {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    text-align: left;
+  }
+
+  &__images {
+    text-align: center;
+    position: relative;
+  }
+  &__fav {
+    // background: url('../../images/fav.svg');
+    top: 15px;
+    cursor: pointer;
+    right: 15px;
+    position: absolute;
+  }
+  &__dish {
+    width: 100%;
+    border-radius: 5px;
+    max-width: 124px;
+    height: 124px;
+    cursor: pointer;
+    margin-top: 15px;
+    object-fit: cover;
+  }
+  &__content {
+    padding-left: 20px;
+  }
+  &__title {
+    margin-top: 16px;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  &__time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #6c727f;
+    img {
+      width: 100%;
+      max-width: 16px;
+      height: 16px;
+      margin: 0px 4px;
+    }
+  }
+  &__price {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  &__text {
+    font-size: 18px;
+    font-weight: bold;
+    span {
+      font-size: 14px;
+      color: #6c727f;
+      margin-right: auto;
+    }
+  }
+  &__cart {
+    margin-left: auto;
+    margin-right: 16px;
+    cursor: pointer;
+  }
+  &__skeleton {
+    width: 100%;
+    height: 254px;
+    border-radius: 24px;
+    text-align: left;
+  }
+}
