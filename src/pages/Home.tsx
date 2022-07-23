@@ -16,8 +16,9 @@ const Home: React.FC = () => {
     dispatch(setCategory(numberCategory));
   }, []);
   const getItems = async () => {
-    const search = value > 0 ? `&search=${value}` : '';
+    const search = value > 0 ? '' : `&search=${value}`;
     const categories = category > 0 ? `category=${category}` : '';
+
     dispatch(
       fetchDishes({
         categories,

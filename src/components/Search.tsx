@@ -8,15 +8,15 @@ const Search: React.FC = () => {
   const dispatch = useAppDispatch();
   const [searchValue, setSearchValue] = React.useState('');
 
+  const onClickClear = () => {
+    dispatch(setValue(''));
+    setSearchValue('');
+    ref.current?.focus();
+  };
+
   const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
     dispatch(setValue(e.target.value));
-  };
-
-  const onClickClear = () => {
-    setSearchValue('');
-    dispatch(setValue(''));
-    ref.current?.focus();
   };
 
   return (

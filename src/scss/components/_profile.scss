@@ -87,6 +87,7 @@
     background: #ff7a28;
   }
   &__btn--unactive {
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
     text-align: left;
     height: 16px;
@@ -97,6 +98,7 @@
     margin-left: 5px;
   }
   &__btn--active {
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
     height: 16px;
     width: 16px;

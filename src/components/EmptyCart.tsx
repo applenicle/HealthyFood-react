@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import woman from '../images/woman.png';
 
-const EmptyCart = () => {
+const EmptyCart: React.FC = () => {
   return (
     <div className="cart-center">
       <h2>Your Cart is Empty</h2>

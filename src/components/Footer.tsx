@@ -6,7 +6,7 @@ import MainBtn from '../images/Rest.svg';
 import Profile from '../images/profileIco.svg';
 import Cart from '../images/cartIco.svg';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <div className="footer">
       <nav className="footer__nav">

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import star from '../images/Star.svg';
 // import favourite from '../../images/fav.svg';
-// import heart from '../../images/Heart.svg';
 import miniCart from '../images/mini-cart.svg';
 import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { addItem, setModal } from '../redux/Cart/slice';

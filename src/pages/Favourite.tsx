@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Categories } from '../components';
 
-const Favourite = () => {
+const Favourite: React.FC = () => {
   return (
     <div>
       <div>

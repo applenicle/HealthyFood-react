@@ -3,7 +3,7 @@ import profile from '../images/Avatar.png';
 import { useAppSelector } from '../hooks/redux-hooks';
 import { ProfileInfo } from '../components';
 
-const Profile = () => {
+const Profile: React.FC = () => {
   const { displayName } = useAppSelector((state) => state.UserReducer);
 
   return (

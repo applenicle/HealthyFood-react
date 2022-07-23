@@ -9,9 +9,9 @@ const ProfileInfo: React.FC = () => {
   // const ref = React.useRef(null);
   // const changeNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   dispatch(setDisplayName(e.target.value));
-  //   //   <div>
-  //   //   <input ref={ref} onChange={changeNickname} type="text" placeholder="Full Name" />
-  //   // </div>
+  // // <div>
+  // //   <input ref={ref} onChange={changeNickname} type="text" placeholder="Full Name" />
+  // // </div>;
   // };
   const { mode } = useAppSelector((state) => state.UserReducer);
   const switchMode = () => {

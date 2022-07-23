@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Modal.module.scss';
-import cart from '../../images/cartIconItem.svg';
-import { useAppSelector } from '../../hooks/redux-hooks';
+import cart from '../images/cartIconItem.svg';
+import { useAppSelector } from '../hooks/redux-hooks';
 
 const Modal: React.FC = () => {
   const { totalPrice, totalCount, modal } = useAppSelector((state) => state.CartReducer);
@@ -10,18 +9,18 @@ const Modal: React.FC = () => {
   return (
     <>
       {modal && modal === true ? (
-        <div className={styles.modal}>
+        <div className="card__modal">
           <img src={cart} alt="cart" />
-          <div className={styles.content}>
+          <div>
             <div>{totalCount} items</div>
-            <div className={styles.price}>${Math.floor(totalPrice * 100) / 100}</div>
+            <div>${Math.floor(totalPrice * 100) / 100}</div>
           </div>
-          <Link to="/cart" className={styles.btn}>
+          <Link to="/cart" className="card__modal--btn">
             Check out
           </Link>
         </div>
       ) : (
-        <div className={styles.hideModal}></div>
+        <div className="card__hide--modal"></div>
       )}
     </>
   );
