@@ -7,16 +7,16 @@ import { fetchDishes } from '../redux/Dishes/asyncAction';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { categoryID, value } = useAppSelector((state: any) => state.FilterReducer);
+  const { categoryID, value } = useAppSelector((state) => state.FilterReducer);
   const { items, status } = useAppSelector((state) => state.DishesReducer);
-  const dishes = items.map((obj: any) => <Card key={obj.id} {...obj} />);
+  const dishes = items.map((obj) => <Card key={obj.id} {...obj} />);
   const lazySkeleton = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
   const category = categoryID;
   const ChangeCategory = React.useCallback((numberCategory: number) => {
     dispatch(setCategory(numberCategory));
   }, []);
   const getItems = async () => {
-    const search = value > 0 ? '' : `&search=${value}`;
+    const search = +value > 0 ? '' : `&search=${value}`;
     const categories = category > 0 ? `category=${category}` : '';
 
     dispatch(
@@ -34,8 +34,9 @@ const Home: React.FC = () => {
   return (
     <div>
       <Header />
-      <Search />
+      <Search placeholder={'Search Your Food'} />
       <Categories categories={category} onClickCategory={ChangeCategory} />
+      <h3 className="categories__title">Categories</h3>
       <div className="header__inner">
         <div className="scroll">
           {status === 'error' ? (

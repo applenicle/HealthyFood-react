@@ -8,7 +8,7 @@ const Cart: React.FC = () => {
   const { cartItems, totalPrice } = useAppSelector((state) => state.CartReducer);
   const dispatch = useAppDispatch();
   if (!totalPrice) {
-    return <EmptyCart />;
+    return <EmptyCart title={'Your Cart is Empty'} />;
   }
   return (
     <div>
@@ -18,7 +18,7 @@ const Cart: React.FC = () => {
       </div>
       <div className="scroll">
         <div>
-          {cartItems.map((obj: any) => (
+          {cartItems?.map((obj) => (
             <CartItem key={obj.id} {...obj} />
           ))}
         </div>

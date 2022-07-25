@@ -22,7 +22,7 @@ const App: React.FC = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/details/:id" element={<Details />} />
           <Route path="/cart" element={<Cart />} />
-          {/* <Route path="/favourite" element={<Favourite />} /> */}
+          <Route path="/favourite" element={<Favourite />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Home />} />
         </Routes>

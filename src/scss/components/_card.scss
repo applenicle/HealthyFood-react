@@ -11,11 +11,18 @@
     position: relative;
   }
   &__fav {
-    // background: url('../../images/fav.svg');
-    top: 15px;
+    top: 25px;
     cursor: pointer;
-    right: 15px;
+    right: 24px;
     position: absolute;
+    &--active {
+      top: 25px;
+      cursor: pointer;
+      right: 24px;
+      position: absolute;
+      color: #d80027;
+      opacity: 0.45;
+    }
   }
   &__dish {
     width: 100%;
@@ -23,7 +30,7 @@
     max-width: 124px;
     height: 124px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 20px;
     object-fit: cover;
   }
   &__content {

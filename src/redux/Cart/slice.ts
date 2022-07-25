@@ -28,28 +28,22 @@ export const DishesSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
-      const ID = state.cartItems.findIndex((item) => item.id === action.payload.id);
-      if (ID >= 0) {
-        state.cartItems[ID] = {
-          ...state.cartItems[ID],
-          count: state.cartItems[ID].count + 1,
-        };
+      const ID = state.cartItems.find((item) => item.id === action.payload.id);
+      if (ID) {
+        ID.count++;
       } else {
-        let prodItem = { ...action.payload, count: 1 };
-        state.cartItems.push(prodItem);
+        state.cartItems.push({
+          ...action.payload,
+          count: 1,
+        });
       }
       state.totalPrice = state.cartItems.reduce((acc, item) => item.count * item.price + acc, 0);
       state.totalCount = state.cartItems.reduce((acc, item) => item.count + acc, 0);
-      console.log(state.totalPrice);
     },
     removeItem: (state, action) => {
-      const ID = state.cartItems.findIndex((item) => item.id === action.payload.id);
-      if (ID >= 0) {
-        state.cartItems[ID] = {
-          ...state.cartItems[ID],
-          count: state.cartItems[ID].count - 1,
-        };
-      }
+      const ID = state.cartItems.find((item) => item.id === action.payload.id);
+      if (ID) ID.count--;
+
       state.totalPrice = state.cartItems.reduce((acc, item) => item.count * item.price + acc, 0);
       state.totalCount = state.cartItems.reduce((acc, item) => item.count + acc, 0);
     },

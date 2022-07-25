@@ -7,9 +7,11 @@ import fire from '../images/fire.svg';
 import cart from '../images/cartMini.svg';
 import back from '../images/back.svg';
 import like from '../images/HeartItem.svg';
-import { useAppSelector } from '../hooks/redux-hooks';
+import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
+import { addToFavourite } from '../redux/Favourite/slice';
 
 const Details: React.FC = () => {
+  const dispatch = useAppDispatch();
   const [dishes, setDishes] = React.useState<{
     title: string;
     price: number;
@@ -19,8 +21,11 @@ const Details: React.FC = () => {
     imageUrl: string;
     kcal: number;
   }>();
-
   const { totalCount } = useAppSelector((state) => state.CartReducer);
+
+  const addFav = () => {
+    dispatch(addToFavourite(dishes));
+  };
 
   let { id } = useParams();
   const navigate = useNavigate();
@@ -45,7 +50,7 @@ const Details: React.FC = () => {
             <img src={back} alt="bacl" />
           </Link>
         </div>
-        <div className="details__like">
+        <div className="details__like" onClick={addFav}>
           <img src={like} alt="like" />
         </div>
       </div>
