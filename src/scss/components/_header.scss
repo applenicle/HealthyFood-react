@@ -44,11 +44,11 @@
     }
   }
   &__search {
+    padding-bottom: 24px;
     position: relative;
     z-index: 1;
   }
   &__search-img {
-    background: url('../../images/search.svg');
     position: absolute;
     top: 22px;
     left: 28px;

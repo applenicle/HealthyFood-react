@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Home from '../images/homeIco.svg';
-import Favourite from '../images/favIco.svg';
-import MainBtn from '../images/Rest.svg';
-import Profile from '../images/profileIco.svg';
-import Cart from '../images/cartIco.svg';
+import Home from '../images/home-footer.svg';
+import Favourite from '../images/fav-footer.svg';
+import MainBtn from '../images/MainBtn.svg';
+import Profile from '../images/profile-footer.svg';
+import Cart from '../images/footer-cart.svg';
 
 const Footer: React.FC = () => {
   return (

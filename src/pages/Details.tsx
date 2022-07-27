@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import star from '../images/fav.svg';
+import star from '../images/Star.svg';
 import clock from '../images/clock.svg';
 import fire from '../images/fire.svg';
-import cart from '../images/cartMini.svg';
+import cart from '../images/white-cart.svg';
 import back from '../images/back.svg';
-import like from '../images/HeartItem.svg';
+import like from '../images/Heart.svg';
 import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { addToFavourite } from '../redux/Favourite/slice';
 
@@ -47,7 +47,7 @@ const Details: React.FC = () => {
       <div className="details__icon">
         <div className="details__back">
           <Link to="/">
-            <img src={back} alt="bacl" />
+            <img src={back} alt="back" />
           </Link>
         </div>
         <div className="details__like" onClick={addFav}>

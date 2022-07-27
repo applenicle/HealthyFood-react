@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import star from '../images/Star.svg';
-import unfavourite from '../images/unfav.svg';
-import miniCart from '../images/mini-cart.svg';
+import favourite from '../images/unfav.svg';
+import miniCart from '../images/mini-cart-orange.svg';
 import { useAppDispatch } from '../hooks/redux-hooks';
 import { addItem } from '../redux/Cart/slice';
 import { addToFavourite, removeFavourite } from '../redux/Favourite/slice';
@@ -51,9 +51,9 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id })
       <div className="card__images">
         <div onClick={() => setFav(!fav)}>
           {fav ? (
-            <img onClick={removeFav} className="card__fav" src={unfavourite} alt="fav" />
+            <img onClick={removeFav} className="card__fav" src={favourite} alt="fav" />
           ) : (
-            <img onClick={addFav} className="card__fav--active" src={unfavourite} alt="fav" />
+            <img onClick={addFav} className="card__fav--active" src={favourite} alt="fav" />
           )}
         </div>
 
@@ -64,8 +64,7 @@ const Card: React.FC<CardProps> = ({ title, imageUrl, rating, time, price, id })
       <div className="card__content">
         <h2 className="card__title">{title}</h2>
         <div className="card__time">
-          {time} min •
-          <img src={star} alt="star" />
+          {time} min •<img src={star} alt="star" />
           {rating}
         </div>
         <div className="card__price">

@@ -1,0 +1,30 @@
+.info {
+  &__title {
+    padding-top: 55px;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    h2 {
+      font-size: 18px;
+      margin-left: 24px;
+    }
+    img {
+      cursor: pointer;
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+    margin-top: 284px;
+    margin-bottom: 20px;
+    background: #ff7a28;
+    cursor: pointer;
+    width: 327px;
+    font-weight: 800;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 24px;
+  }
+}

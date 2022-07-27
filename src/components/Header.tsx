@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import avatar from '../images/Avatar.png';
-import profile from '../images/profile.svg';
+import dots from '../images/dots.svg';
 import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { removeUser } from '../redux/User/slice';
 
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
             <h6 className="header__subtitle">Hi, {displayName}</h6>
           </div>
           <Link className="header__themeToogle" to="/login">
-            <img onClick={() => dispatch(removeUser())} src={profile} alt="profile" />
+            <img onClick={() => dispatch(removeUser())} src={dots} alt="profile" />
           </Link>
         </div>
         <h2 className="header__title">

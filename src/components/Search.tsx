@@ -1,5 +1,6 @@
 import React from 'react';
 import cog from '../images/Cog.svg';
+import search from '../images/Search.svg';
 import { setValue } from '../redux/Filter/slice';
 import { useAppDispatch } from '../hooks/redux-hooks';
 type SearchProps = {
@@ -25,7 +26,7 @@ const Search: React.FC<SearchProps> = ({ placeholder }) => {
   return (
     <>
       <div className="header__search">
-        <div className="header__search-img"></div>
+        <img className="header__search-img" src={search} alt="Search" />
         <input
           ref={ref}
           value={searchValue}

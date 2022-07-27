@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import cart from '../images/cartIconItem.svg';
+import cart from '../images/mini-cart-orange.svg';
 import { useAppSelector } from '../hooks/redux-hooks';
 
 const Modal: React.FC = () => {

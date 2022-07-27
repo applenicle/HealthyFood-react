@@ -35,6 +35,7 @@ export const UserSlice = createSlice({
     setDisplayName: (state, action) => {
       state.displayName = action.payload;
     },
+
     setMode: (state, action) => {
       state.mode = action.payload;
     },

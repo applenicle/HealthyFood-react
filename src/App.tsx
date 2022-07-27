@@ -8,6 +8,8 @@ import SignUp from './pages/SignUp';
 import Details from './pages/Details';
 import Favourite from './pages/Favourite';
 import Profile from './pages/Profile';
+import Info from './pages/Info';
+
 import { useAppSelector } from './hooks/redux-hooks';
 
 const App: React.FC = () => {
@@ -24,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/favourite" element={<Favourite />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/info" element={<Info />} />
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />
